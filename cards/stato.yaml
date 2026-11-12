@@ -1,0 +1,14 @@
+# Card con lo stato del periodo in corso.
+# Sostituisci "hp_envy_6100e_series" con il nome della tua stampante.
+type: entities
+title: HP Instant Ink
+entities:
+  - entity: sensor.hp_envy_6100e_series_pagine_stampate_nel_periodo
+  - entity: sensor.hp_envy_6100e_series_pagine_del_piano_rimanenti
+  - entity: sensor.hp_envy_6100e_series_pagine_accumulate_disponibili
+  - entity: sensor.hp_envy_6100e_series_pagine_accumulate_al_rinnovo
+  - entity: sensor.hp_envy_6100e_series_pagine_extra
+  - entity: sensor.hp_envy_6100e_series_costo_pagine_extra
+  - entity: sensor.hp_envy_6100e_series_giorni_al_rinnovo
+  - entity: sensor.hp_envy_6100e_series_inchiostro_nero
+  - entity: sensor.hp_envy_6100e_series_inchiostro_a_colori

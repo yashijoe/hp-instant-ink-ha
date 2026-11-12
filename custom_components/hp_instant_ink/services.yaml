@@ -1,0 +1,25 @@
+adjust:
+  fields:
+    config_entry_id:
+      required: false
+      selector:
+        config_entry:
+          integration: hp_instant_ink
+    printed_pages:
+      required: false
+      selector:
+        number:
+          min: 0
+          max: 100000
+          mode: box
+    rollover_pages:
+      required: false
+      selector:
+        number:
+          min: 0
+          max: 15000
+          mode: box
+    period_start:
+      required: false
+      selector:
+        date:

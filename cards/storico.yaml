@@ -1,0 +1,19 @@
+# Card con lo storico dei periodi chiusi.
+# Sostituisci "hp_envy_6100e_series" con il nome della tua stampante
+# (lo vedi negli ID delle entità create dall'integrazione).
+type: markdown
+title: HP Instant Ink - storico
+content: >-
+  {% set storico = state_attr('sensor.hp_envy_6100e_series_pagine_stampate_nel_periodo_precedente', 'history') or [] %}
+
+  | Periodo | Stampate | Accumulate nel mese | Totale accumulato | Extra |
+
+  |:--|--:|--:|--:|--:|
+
+  {% for p in storico -%}
+
+  | {{ p.start }} → {{ p.end }} | {{ p.printed }} | {{ '%+d' % p.accumulated }} | {{ p.rollover_end }} | {{ p.overage_pages }} |
+
+  {% endfor %}
+
+  {% if not storico %}Nessun periodo ancora chiuso: lo storico parte dal prossimo rinnovo.{% endif %}

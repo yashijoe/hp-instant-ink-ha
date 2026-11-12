@@ -1,0 +1,96 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "HP Instant Ink printer",
+        "description": "Enter the printer address and your plan details. You can change them later.",
+        "data": {
+          "host": "Printer IP address",
+          "plan_pages": "Pages included per month",
+          "rollover_max": "Maximum rollover pages",
+          "billing_day": "Day of the month the plan renews",
+          "overage_block_size": "Pages in each additional set",
+          "overage_block_price": "Price of each additional set",
+          "carry_overage_leftover": "Carry unused pages of additional sets over to the next month",
+          "initial_printed": "Pages already printed in the current period",
+          "initial_rollover": "Rollover pages available at the start of the period"
+        },
+        "data_description": {
+          "host": "For example 192.168.1.50",
+          "rollover_max": "HP lets you roll over up to three times your plan pages",
+          "initial_printed": "Shown in your HP Instant Ink account",
+          "initial_rollover": "Shown in your HP Instant Ink account"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot reach the printer at this address",
+      "unsupported": "This printer does not expose a page counter",
+      "unknown": "Unexpected answer from the printer"
+    },
+    "abort": {
+      "already_configured": "This printer is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "HP Instant Ink plan",
+        "data": {
+          "host": "Printer IP address",
+          "plan_pages": "Pages included per month",
+          "rollover_max": "Maximum rollover pages",
+          "billing_day": "Day of the month the plan renews",
+          "overage_block_size": "Pages in each additional set",
+          "overage_block_price": "Price of each additional set",
+          "carry_overage_leftover": "Carry unused pages of additional sets over to the next month"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total_pages": { "name": "Total pages printed", "unit_of_measurement": "pages" },
+      "period_pages": { "name": "Pages printed this period", "unit_of_measurement": "pages" },
+      "plan_remaining": { "name": "Plan pages remaining", "unit_of_measurement": "pages" },
+      "rollover_remaining": { "name": "Rollover pages available", "unit_of_measurement": "pages" },
+      "rollover_projected": { "name": "Rollover pages at renewal", "unit_of_measurement": "pages" },
+      "free_remaining": { "name": "Free pages remaining", "unit_of_measurement": "pages" },
+      "overage_pages": { "name": "Overage pages", "unit_of_measurement": "pages" },
+      "overage_cost": { "name": "Overage cost" },
+      "days_remaining": { "name": "Days to renewal" },
+      "next_renewal": { "name": "Next renewal" },
+      "period_start": { "name": "Period start" },
+      "last_period_pages": { "name": "Pages printed last period", "unit_of_measurement": "pages" },
+      "ink_black": { "name": "Black ink" },
+      "ink_tricolor": { "name": "Tri-color ink" },
+      "ink_cyan": { "name": "Cyan ink" },
+      "ink_magenta": { "name": "Magenta ink" },
+      "ink_yellow": { "name": "Yellow ink" }
+    }
+  },
+  "services": {
+    "adjust": {
+      "name": "Align counters",
+      "description": "Corrects the current period so it matches your HP Instant Ink account.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Printer",
+          "description": "Only needed when more than one printer is configured."
+        },
+        "printed_pages": {
+          "name": "Pages printed this period",
+          "description": "Pages already printed in the current period."
+        },
+        "rollover_pages": {
+          "name": "Rollover pages",
+          "description": "Rollover pages available at the start of the period."
+        },
+        "period_start": {
+          "name": "Period start",
+          "description": "Start date of the current period."
+        }
+      }
+    }
+  }
+}

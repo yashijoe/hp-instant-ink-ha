@@ -1,0 +1,12 @@
+{
+  "domain": "hp_instant_ink",
+  "name": "HP Instant Ink",
+  "codeowners": ["@yashijoe"],
+  "config_flow": true,
+  "documentation": "https://github.com/yashijoe/hp-instant-ink-ha",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/yashijoe/hp-instant-ink-ha/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

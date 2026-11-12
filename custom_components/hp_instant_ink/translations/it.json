@@ -1,0 +1,96 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Stampante HP Instant Ink",
+        "description": "Inserisci l'indirizzo della stampante e i dati del tuo piano. Potrai modificarli in seguito.",
+        "data": {
+          "host": "Indirizzo IP della stampante",
+          "plan_pages": "Pagine incluse al mese",
+          "rollover_max": "Massimo di pagine accumulabili",
+          "billing_day": "Giorno del mese in cui si rinnova il piano",
+          "overage_block_size": "Pagine di ogni set aggiuntivo",
+          "overage_block_price": "Prezzo di ogni set aggiuntivo",
+          "carry_overage_leftover": "Riporta al mese successivo le pagine non usate dei set aggiuntivi",
+          "initial_printed": "Pagine già stampate nel periodo in corso",
+          "initial_rollover": "Pagine accumulate disponibili a inizio periodo"
+        },
+        "data_description": {
+          "host": "Ad esempio 192.168.1.50",
+          "rollover_max": "HP consente di accumulare fino al triplo delle pagine del piano",
+          "initial_printed": "Lo trovi nel tuo account HP Instant Ink",
+          "initial_rollover": "Lo trovi nel tuo account HP Instant Ink"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile raggiungere la stampante a questo indirizzo",
+      "unsupported": "Questa stampante non espone il contatore delle pagine",
+      "unknown": "Risposta inattesa dalla stampante"
+    },
+    "abort": {
+      "already_configured": "Questa stampante è già configurata"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Piano HP Instant Ink",
+        "data": {
+          "host": "Indirizzo IP della stampante",
+          "plan_pages": "Pagine incluse al mese",
+          "rollover_max": "Massimo di pagine accumulabili",
+          "billing_day": "Giorno del mese in cui si rinnova il piano",
+          "overage_block_size": "Pagine di ogni set aggiuntivo",
+          "overage_block_price": "Prezzo di ogni set aggiuntivo",
+          "carry_overage_leftover": "Riporta al mese successivo le pagine non usate dei set aggiuntivi"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total_pages": { "name": "Pagine totali stampate", "unit_of_measurement": "pagine" },
+      "period_pages": { "name": "Pagine stampate nel periodo", "unit_of_measurement": "pagine" },
+      "plan_remaining": { "name": "Pagine del piano rimanenti", "unit_of_measurement": "pagine" },
+      "rollover_remaining": { "name": "Pagine accumulate disponibili", "unit_of_measurement": "pagine" },
+      "rollover_projected": { "name": "Pagine accumulate al rinnovo", "unit_of_measurement": "pagine" },
+      "free_remaining": { "name": "Pagine gratuite rimanenti", "unit_of_measurement": "pagine" },
+      "overage_pages": { "name": "Pagine extra", "unit_of_measurement": "pagine" },
+      "overage_cost": { "name": "Costo pagine extra" },
+      "days_remaining": { "name": "Giorni al rinnovo" },
+      "next_renewal": { "name": "Prossimo rinnovo" },
+      "period_start": { "name": "Inizio periodo" },
+      "last_period_pages": { "name": "Pagine stampate nel periodo precedente", "unit_of_measurement": "pagine" },
+      "ink_black": { "name": "Inchiostro nero" },
+      "ink_tricolor": { "name": "Inchiostro a colori" },
+      "ink_cyan": { "name": "Inchiostro ciano" },
+      "ink_magenta": { "name": "Inchiostro magenta" },
+      "ink_yellow": { "name": "Inchiostro giallo" }
+    }
+  },
+  "services": {
+    "adjust": {
+      "name": "Allinea i contatori",
+      "description": "Corregge i valori del periodo in corso per farli coincidere con l'account HP Instant Ink.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Stampante",
+          "description": "Necessaria solo se hai più stampanti configurate."
+        },
+        "printed_pages": {
+          "name": "Pagine stampate nel periodo",
+          "description": "Pagine già stampate nel periodo in corso."
+        },
+        "rollover_pages": {
+          "name": "Pagine accumulate",
+          "description": "Pagine accumulate disponibili a inizio periodo."
+        },
+        "period_start": {
+          "name": "Inizio periodo",
+          "description": "Data di inizio del periodo in corso."
+        }
+      }
+    }
+  }
+}
